@@ -40,8 +40,6 @@ class DouBanSpider(scrapy.Spider):
             review = review.replace('\ufeff', '')
             review = review.replace('\u200b', '')
 
-            review = re.sub("[^\u4e00-\u9fa5]", '', review)
-
             if review:
                 with open('./data/review.csv', 'a+') as f:
                     csv_write = csv.writer(f)
